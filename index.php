@@ -374,7 +374,7 @@
             <div class="border"></div>
                 <form class="contact-form" action="index.php" method="post">
                     <label>
-                        <input type="text" name="Name" class="contact-form-text" placeholder="Dein Name">
+                        <input type="text" name="Name" class="contact-form-text" placeholder="Vor- und Nachname">
                     </label>
                     <label>
                         <input type="email" name="email" class="contact-form-text" placeholder="Email Adresse">
@@ -395,7 +395,7 @@
             $betreff = $_GET["betreff"];
             $nachricht = $_GET["nachricht"];
 
-            mail('')
+            mail('dennis.vandenbrock@btiwatches.de', $betreff, $nachricht, 'Neue Mail von $name')
           ?>
       </section>
       

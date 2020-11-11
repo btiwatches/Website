@@ -372,7 +372,7 @@
             <div class="contact-section">
             <h6>KONTAKT</h6>
             <div class="border"></div>
-                <form class="contact-form" action="index.php" method="post">
+                <form class="contact-form" action="" method="post">
                     <label>
                         <input type="text" name="Name" class="contact-form-text" placeholder="Vor- und Nachname">
                     </label>

@@ -395,7 +395,7 @@
             $betreff = $_GET["betreff"];
             $nachricht = $_GET["nachricht"];
 
-            mail('dennis.vandenbrock@btiwatches.de', $betreff, $nachricht, 'Neue Mail von $name')
+            mail('dennis.vandenbrock@btiwatches.de', '$betreff', '$nachricht', 'Neue Mail von $name', 'Wenden sie dich bei Rückfragen oder Antwort an: $email')
           ?>
       </section>
       

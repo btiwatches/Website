@@ -390,12 +390,24 @@
             </div>
 
           <?php
-            $name = $_GET["Name"];
-            $email = $_GET["email"];
-            $betreff = $_GET["betreff"];
-            $nachricht = $_GET["nachricht"];
+          $empfaenger = "dennis.vandenbrock@btiwatches.de";
+          $absender   = $_GET["email"];
+          $betreff    = $_GET["betreff"];
+          $antwortan  = $absender;
+          $mailtext   = $_GET["nachricht"];
 
-            mail('dennis.vandenbrock@btiwatches.de', '$betreff', '$nachricht', 'Neue Mail von $name', 'Wenden sie dich bei Rückfragen oder Antwort an: $email')
+          $header  = "MIME-Version: 1.0\r\n";
+          $header .= "Content-type: text/html; charset=utf-8\r\n";
+
+          $header .= "From: $absender\r\n";
+          $header .= "Reply-To: $antwortan\r\n";
+          // $header .= "Cc: $cc\r\n";  // falls an CC gesendet werden soll
+          $header .= "X-Mailer: PHP ". phpversion();
+
+          mail( $empfaenger,
+                  $betreff,
+                  $mailtext,
+                  $header);
           ?>
       </section>
       

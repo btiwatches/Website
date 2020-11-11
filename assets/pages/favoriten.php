@@ -136,20 +136,21 @@
     <div class="cart">
 <?php
     $benutzer = $_SESSION["Benutzername"];
-    $db_link = mysqli_connect("localhost", "root", "", "btiwatches.de");
+    if (isset($benutzer)) {
+        $db_link = mysqli_connect("localhost", "root", "", "btiwatches.de");
 
-    mysqli_set_charset($db_link, "utf8");
+        mysqli_set_charset($db_link, "utf8");
 
-    $sql_anweisung = "SELECT *
+        $sql_anweisung = "SELECT *
                         FROM tbl_user
                         WHERE Benutzername = '$benutzer'";
-    
-    $ergebnismenge = mysqli_query($db_link, $sql_anweisung);
-        
-    if($datenzeile = mysqli_fetch_assoc($ergebnismenge))
-    {
-        $id_user = $datenzeile["id_user"];
-        $sql_anweisung2 ="SELECT  DISTINCT(uh.id_uhren), uh.bezeichnunguhren, h.bezeichnunghersteller, uh.bildname, g.bezeichnunggehaeuse, COUNT(f.uhren_id)
+
+        $ergebnismenge = mysqli_query($db_link, $sql_anweisung);
+
+        if($datenzeile = mysqli_fetch_assoc($ergebnismenge))
+        {
+            $id_user = $datenzeile["id_user"];
+            $sql_anweisung2 ="SELECT  DISTINCT(uh.id_uhren), uh.bezeichnunguhren, h.bezeichnunghersteller, uh.bildname, g.bezeichnunggehaeuse, COUNT(f.uhren_id)
                                     FROM  tbl_user AS u,
                                             tbl_hersteller AS h,
                                             tbl_uhren AS uh,
@@ -167,77 +168,82 @@
                                     GROUP BY f.uhren_id";
 
 
-        $ergebnismenge2 = mysqli_query($db_link, $sql_anweisung2);
-        $rows = $ergebnismenge2->num_rows;
-        $i = 0;
-        if($rows > 0)
-        {
-            while($datenzeile = mysqli_fetch_assoc($ergebnismenge2)) {
-                $id_uhren = $datenzeile["id_uhren"];
-                $uhrenname = $datenzeile["bezeichnunguhren"];
-                $hersteller = $datenzeile["bezeichnunghersteller"];
-                $bildname = $datenzeile["bildname"];
-                $infos = $datenzeile["bezeichnunggehaeuse"];
-                $menge = $datenzeile["COUNT(f.uhren_id)"];
+            $ergebnismenge2 = mysqli_query($db_link, $sql_anweisung2);
+            $rows = $ergebnismenge2->num_rows;
+            $i = 0;
+            if($rows > 0)
+            {
+                while($datenzeile = mysqli_fetch_assoc($ergebnismenge2)) {
+                    $id_uhren = $datenzeile["id_uhren"];
+                    $uhrenname = $datenzeile["bezeichnunguhren"];
+                    $hersteller = $datenzeile["bezeichnunghersteller"];
+                    $bildname = $datenzeile["bildname"];
+                    $infos = $datenzeile["bezeichnunggehaeuse"];
+                    $menge = $datenzeile["COUNT(f.uhren_id)"];
 
-                if($i == 0) {
-                    echo "        <ul class=\"cartWrap\">";
-                    echo "        <li class=\"items odd\">";
-                    echo "        <div class=\"infoWrap\"> ";
-                    echo "            <div class=\"cartSection\">";
-                    echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" />";
-                    echo "                <p class=\"itemNumber\" style=\"text-transform: uppercase;\">#$hersteller$id_uhren</p>";
-                    echo "                <h3>$uhrenname<div style=\"font-size: 10px\">x $menge</div></h3>";
-                    echo "                <p class=\"qty\" style=\"margin-top: 10px\">$infos</p>";
-                    echo "            </div>";
-                    echo "            <div class=\"prodTotal cartSection\">";
-                    echo "                <p>";
-                    echo "                    <a href=\"products.php?id_uhren=$id_uhren\" class=\"btn-prodInfo\">";
-                    echo "                        Weitere Infos";
-                    echo "                    </a>";
-                    echo "                </p>";
-                    echo "            </div>";
-                    echo "            <div class=\"cartSection removeWrap\">";
-                    echo "                <a href=\"favoriten.php?DeleteFromCart=$id_uhren\" class=\"remove\">x</a>";
-                    echo "            </div>";
-                    echo "        </div>";
-                    echo "    </li>";
-                    echo "   </ul>";
+                    if($i == 0) {
+                        echo "        <ul class=\"cartWrap\">";
+                        echo "        <li class=\"items odd\">";
+                        echo "        <div class=\"infoWrap\"> ";
+                        echo "            <div class=\"cartSection\">";
+                        echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" />";
+                        echo "                <p class=\"itemNumber\" style=\"text-transform: uppercase;\">#$hersteller$id_uhren</p>";
+                        echo "                <h3>$uhrenname<div style=\"font-size: 10px\">x $menge</div></h3>";
+                        echo "                <p class=\"qty\" style=\"margin-top: 10px\">$infos</p>";
+                        echo "            </div>";
+                        echo "            <div class=\"prodTotal cartSection\">";
+                        echo "                <p>";
+                        echo "                    <a href=\"products.php?id_uhren=$id_uhren\" class=\"btn-prodInfo\">";
+                        echo "                        Weitere Infos";
+                        echo "                    </a>";
+                        echo "                </p>";
+                        echo "            </div>";
+                        echo "            <div class=\"cartSection removeWrap\">";
+                        echo "                <a href=\"favoriten.php?DeleteFromCart=$id_uhren\" class=\"remove\">x</a>";
+                        echo "            </div>";
+                        echo "        </div>";
+                        echo "    </li>";
+                        echo "   </ul>";
 
-                    $i = 1;
-                } else {
-                    echo "        <ul class=\"cartWrap\">";
-                    echo "        <li class=\"items even\">";
-                    echo "        <div class=\"infoWrap\"> ";
-                    echo "            <div class=\"cartSection\">";
-                    echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" />";
-                    echo "                <p class=\"itemNumber\" style=\"text-transform: uppercase;\">#$hersteller$id_uhren</p>";
-                    echo "                <h3>$uhrenname<div style=\"font-size: 10px\">x $menge</div></h3>";
-                    echo "                <p class=\"qty\" style=\"margin-top: 10px\">$infos</p>";
-                    echo "            </div>";
-                    echo "            <div class=\"prodTotal cartSection\">";
-                    echo "                <p>";
-                    echo "                    <a href=\"products.php?id_uhren=$id_uhren\" class=\"btn-prodInfo\">";
-                    echo "                        Weitere Infos";
-                    echo "                    </a>";
-                    echo "                </p>";
-                    echo "            </div>";
-                    echo "            <div class=\"cartSection removeWrap\" style=\"width: 23.2px;\">";
-                    echo "                <a href=\"favoriten.php?DeleteFromCart=$id_uhren\" class=\"remove\">x</a>";
-                    echo "            </div>";
-                    echo "        </div>";
-                    echo "    </li>";
-                    echo "   </ul>";
+                        $i = 1;
+                    } else {
+                        echo "        <ul class=\"cartWrap\">";
+                        echo "        <li class=\"items even\">";
+                        echo "        <div class=\"infoWrap\"> ";
+                        echo "            <div class=\"cartSection\">";
+                        echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" />";
+                        echo "                <p class=\"itemNumber\" style=\"text-transform: uppercase;\">#$hersteller$id_uhren</p>";
+                        echo "                <h3>$uhrenname<div style=\"font-size: 10px\">x $menge</div></h3>";
+                        echo "                <p class=\"qty\" style=\"margin-top: 10px\">$infos</p>";
+                        echo "            </div>";
+                        echo "            <div class=\"prodTotal cartSection\">";
+                        echo "                <p>";
+                        echo "                    <a href=\"products.php?id_uhren=$id_uhren\" class=\"btn-prodInfo\">";
+                        echo "                        Weitere Infos";
+                        echo "                    </a>";
+                        echo "                </p>";
+                        echo "            </div>";
+                        echo "            <div class=\"cartSection removeWrap\" style=\"width: 23.2px;\">";
+                        echo "                <a href=\"favoriten.php?DeleteFromCart=$id_uhren\" class=\"remove\">x</a>";
+                        echo "            </div>";
+                        echo "        </div>";
+                        echo "    </li>";
+                        echo "   </ul>";
 
-                    $i = 0;
+                        $i = 0;
+                    }
+
                 }
-            
+            }
+            else {
+                echo "Sie haben keine Uhren in ihrer Favoritenliste.";
             }
         }
-        else {
-            echo "Sie haben keine Uhren in ihrer Favoritenliste";
-        }
     }
+    else {
+        echo "Um die Favoritenliste zu benutzten, müssen sie angemeldet sein.";
+    }
+
 ?>
 </div>
 </div>

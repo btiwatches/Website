@@ -88,7 +88,7 @@
           <div id="mainListDiv" class="main_list">
             <ul class="navlinks">
               <li class="nodisplayonmobile">
-                <a href="/assets/pages/favoriten.php"
+                <a href="assets/pages/favoriten.php"
                   ><i class="fas fa-heart"></i></a>
               </li>
               <div class="dropdown">
@@ -110,8 +110,8 @@
                           ?> <a href="index.php?Ausloggen=true" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px;">Ausloggen</div></a> <?php
                         }
                         else {
-                          ?>  <a href="assets/pages/login.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; border-bottom: 1px solid white;" class="dropdown-p">Anmelden</div></a> <?php
-                          ?>  <a href="assets/pages/register.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px;" class="dropdown-p">Registrieren</div></a> <?php
+                          ?>  <a href="assets/pages/Login.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; border-bottom: 1px solid white;" class="dropdown-p">Anmelden</div></a> <?php
+                          ?>  <a href="assets/pages/Register.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px;" class="dropdown-p">Registrieren</div></a> <?php
                         }
                         ?>
                   </div>
@@ -171,7 +171,6 @@
           muted
           loop
           id="myVideo"
-          type="video/ogg"
         ></video>
 
         <div class="blackblock" id="blackblock"></div>
@@ -187,7 +186,7 @@
           <div class="MS-content">
               <div class="item">
                 <a href="assets/pages/products.php?id_uhren=1">
-                  <img src="images/Rolex/Datejust 31.png" alt="Datejust 31">
+                  <img src="images/rolex/Datejust 31.png" alt="Datejust 31">
                 </a>
                   <h2 class="headline_wacthes_name">Rolex Datejust 31</h2>
                   <p class="item-info">Oyster, 31 mm, Edelstahl Oystersteel und <br>Weißgold mit Diamanten</p>
@@ -196,7 +195,7 @@
               
               <div class="item">
                 <a href="assets/pages/products.php?id_uhren=2">
-                  <img src="images/Rolex/SKY-DWELLER.png" alt="SKY DWELLER">
+                  <img src="images/rolex/SKY-DWELLER.png" alt="SKY DWELLER">
                 </a>
                   <h2 class="headline_wacthes_name">SKY-DWELLER</h2>
                   <p class="item-info">Oyster, 42 mm, Gelbgold</p>
@@ -206,7 +205,7 @@
 
               <div class="item">
                 <a href="assets/pages/products.php?id_uhren=3">
-                  <img src="images/Rolex/Submariner Date.png" alt="">
+                  <img src="images/rolex/Submariner Date.png" alt="">
                 </a>
                   <h2 class="headline_wacthes_name">Submariner Date</h2>
                   <p class="item-info">Oyster, 41 mm, Edelstahl Oystersteel und<br> Gelbgold</p>
@@ -215,7 +214,7 @@
 
               <div class="item">
                 <a href="assets/pages/products.php?id_uhren=4">
-                  <img src="images/Rolex/Oyster Perpetual 41.png" alt="">
+                  <img src="images/rolex/Oyster Perpetual 41.png" alt="">
                 </a>
                   <h2 class="headline_wacthes_name">Oyster Perpetual 41</h2>
                   <p class="item-info">Oyster, 41 mm, Edelstahl Oystersteel</p>
@@ -366,21 +365,38 @@
                 Menschen über Luxus Uhren zu erweitern. Wir setzen dabei höchste Priorität aus die Zufriedenheit unserer Kunden.
 
                 Falls sie weitere Fragen oder Anliegen haben, kontaktieren sie uns gerne über das Kontaktformular, welches sie unter "Kontakt" finden.
-                </div>  </p>
+            </p>
         </section>
 
       <section id="contact" style="height: 75vh;">
             <div class="contact-section">
             <h6>KONTAKT</h6>
             <div class="border"></div>
-                <form class="contact-form" action="index.html" method="post">
-                    <input type="text" class="contact-form-text" placeholder="Dein Name">
-                    <input type="email" class="contact-form-text" placeholder="Email Adresse">
-                    <input type="text" class="contact-form-text" placeholder="Telefonnummer">
-                    <textarea class="contact-form-text" placeholder="Deine Nachricht"></textarea>
+                <form class="contact-form" action="index.php" method="post">
+                    <label>
+                        <input type="text" name="Name" class="contact-form-text" placeholder="Dein Name">
+                    </label>
+                    <label>
+                        <input type="email" name="email" class="contact-form-text" placeholder="Email Adresse">
+                    </label>
+                    <label>
+                        <input type="text" name="betreff" class="contact-form-text" placeholder="Betreff">
+                    </label>
+                    <label>
+                        <textarea class="contact-form-text" name="nachricht" placeholder="Deine Nachricht"></textarea>
+                    </label>
                     <input type="submit" class="contact-form-btn" value="Senden">
                 </form>
             </div>
+
+          <?php
+            $name = $_GET["Name"];
+            $email = $_GET["email"];
+            $betreff = $_GET["betreff"];
+            $nachricht = $_GET["nachricht"];
+
+            mail('')
+          ?>
       </section>
       
     </section>
@@ -388,7 +404,7 @@
   <footer class="footer-distributed">
 
       <div class="footer-left">
-          <img src="images/Logo/white_small_logo.png">
+          <img src="images/Logo/white_small_logo.png" alt="Logo">
 
 
           <p class="footer-links">

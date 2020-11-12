@@ -404,6 +404,8 @@
           // $header .= "Cc: $cc\r\n";  // falls an CC gesendet werden soll
           $header .= "X-Mailer: PHP ". phpversion();
 
+          ini_set("SMTP","ssl://smtp.gmail.com");
+          ini_set("smtp_port","465");
           mail( $empfaenger,
                   $betreff,
                   $mailtext,

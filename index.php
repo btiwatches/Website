@@ -389,6 +389,10 @@
                     <input type="submit" class="contact-form-btn" value="Senden">
                 </form>
             </div>
+
+          <!--alert messages start-->
+          <?php echo $alert; ?>
+          <!--alert messages end-->
       </section>
       
     </section>

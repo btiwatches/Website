@@ -404,14 +404,14 @@
           $mail->SMTPAuth = true; // authentication enabled
           $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
           $mail->Host = "smtp.gmail.com";
-          $mail->Port = 465; // or 587
+          $mail->Port = 25; // or 587
           $mail->IsHTML(true);
           $mail->Username = "btiwatches.noreply@gmail.com";
           $mail->Password = "BT!w@tches2020";
-          $mail->SetFrom("noreply@btiwatches.de");
+          $mail->SetFrom("btiwatches.noreply@gmail.com");
           $mail->Subject = "Test";
           $mail->Body = "hello";
-          $mail->addAddress('dennisvandenbrock54@gmail.com');
+          $mail->addAddress('btiwatches.noreply@gmail.com');
 
           if(!$mail->Send()) {
               echo "<p style=\'color: white;\'>Mailer Error: " . $mail->ErrorInfo ."</p>";

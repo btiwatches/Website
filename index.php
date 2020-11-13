@@ -44,7 +44,28 @@
         function Ausloggen() {
           session_unset();
           header("Location:index.php");
+          exit;
         }
+
+        if (isset($_GET["mail"])) {
+          $name = $_POST["Name"];
+          $email = $_POST["email"];
+          $betreff = $_POST["betreff"];
+          $nachricht = $_POST["nachricht"];
+          if (!empty($name) && !empty($email) && !empty($betreff) && !empty($nachricht)) {
+              $_SESSION["Name"] = $name;
+              $_SESSION["Email"] = $email;
+              $_SESSION["Betreff"] = $betreff;
+              $_SESSION["Betreff"] = $betreff;
+              $_SESSION["Nachricht"] = $nachricht;
+              header("Location:assets/sendmail/PHPMailer/sendmail.php");
+              exit;
+          }
+          else {
+              $error = "<p style=\"color: red; text-align: center;\">Bitte füllen sie alle Felder aus!</p>";
+          }
+        }
+
 
       ?>
     <section id="seite">
@@ -372,7 +393,10 @@
             <div class="contact-section">
             <h6>KONTAKT</h6>
             <div class="border"></div>
-                <form class="contact-form" action="assets/sendmail/PHPMailer/sendmail.php" method="post">
+                <?php
+                echo $error;
+                ?>
+                <form class="contact-form" action="index.php?mail=true" method="post">
                     <label>
                         <input type="text" name="Name" class="contact-form-text" placeholder="Vor- und Nachname">
                     </label>
@@ -388,18 +412,6 @@
 
                     <input type="submit" class="contact-form-btn" value="Senden" name="submit">
                 </form>
-                <?php
-                $name = $_POST["Name"];
-                $email = $_POST["email"];
-                $betreff = $_POST["betreff"];
-                $nachricht = $_POST["nachricht"];
-
-                $_SESSION["Name"] = $name;
-                $_SESSION["Email"] = $email;
-                $_SESSION["Betreff"] = $betreff;
-                $_SESSION["Betreff"] = $betreff;
-                $_SESSION["Nachricht"] = $nachricht;
-                ?>
             </div>
       </section>
       

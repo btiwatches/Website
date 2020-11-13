@@ -22,6 +22,7 @@
     <list default="true" id="51ae9676-ca38-4afb-9948-38cf8f5fd3ed" name="Default Changelist" comment="Finished Email system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/sendmail/PHPMailer/sendmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sendmail/PHPMailer/sendmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sendmail/PHPMailer/sendmailowner.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +68,7 @@
       <workItem from="1605115327797" duration="68000" />
       <workItem from="1605250350557" duration="7431000" />
       <workItem from="1605280910501" duration="3402000" />
+      <workItem from="1605300537577" duration="1832000" />
     </task>
     <task id="LOCAL-00001" summary="favoriten.php Fehler Meldung bei nicht login">
       <created>1605099395665</created>
@@ -131,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605266535743</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finished Email system">
+      <created>1605296417853</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605296417853</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +162,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="favoriten.php Fehler Meldung bei nicht login" />
     <MESSAGE value="Email system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Email system" />
+    <MESSAGE value="Finished Email system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Email system" />
   </component>
   <component name="WindowStateProjectService">
     <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1605099380168">
@@ -164,11 +174,12 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="604" y="355" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1605265997503" />
-    <state x="361" y="152" key="Vcs.Push.Dialog.v2" timestamp="1605266537544">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="451" y="190" key="Vcs.Push.Dialog.v2" timestamp="1605296420134">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="507" y="-865" key="Vcs.Push.Dialog.v2/0.0.1536.864/112.-1050.1680.1050@112.-1050.1680.1050" timestamp="1605254133633" />
     <state x="361" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1605266537544" />
+    <state x="451" y="190" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605296420134" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605250359978">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

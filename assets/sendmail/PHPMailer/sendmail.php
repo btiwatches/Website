@@ -94,9 +94,6 @@ $betreff = $_SESSION["Betreff"];
 $nachricht = $_SESSION["Nachricht"];
 $name = $_SESSION["Name"];
 $email = $_SESSION["Email"];
-echo $email;
-echo $_SESSION["Email"];
-print_r($email);
 
 include 'includes/PHPMailer.php';
 include 'includes/Exception.php';
@@ -304,7 +301,22 @@ $uhrzeit = date("H:i",$timestamp);
 
     if ($mail->Send()) {
         echo "<p style=\"color: green; text-align: center; \">Email wurde versendet</p>";
-        header('sendmailowner.php');
+        $mail->ClearAddresses();
+        $mail->Subject = $betreff;
+        $mail->Body = "<h1>Sie haben eine Neue Mail von $name bekommen</h1>
+                                <h3>In der Mail geht es sich um: $betreff</h3>
+                                <p>$nachricht</p><br>
+                                Melden sie sich bei: $email
+                                <p style=\"font-size: smaller\">Diese Mail wurde am $datum um $uhrzeit vom <b>BTI Watches Mail System</b> verschickt</p>";
+
+        $mail->addAddress("btiwatches.noreply@gmail.com");
+
+        if ($mail->Send()) {
+            echo "<p style=\"color: green; text-align: center; \">Verifications Email wurde versendet</p>";
+            header('loaction: ../../../index.php');
+        } else {
+            echo "<p style=\"color: red; text-align: center; \">Fehler beim versenden der Verifications E-Mail</p>";
+        }
     } else {
         echo "<p style=\"color: red; text-align: center; \">Fehler beim versenden der E-Mail.<br>Fehler: $mail->ErrorInfo;</p>";
     }

@@ -391,33 +391,6 @@
 
           <?php
 
-          require("PHPMailer/src/PHPMailer.php");
-          require("PHPMailer/src/SMTP.php");
-
-          include_once "PHPMailer/src/Exception.php";
-          include_once "PHPMailer/src/PHPMailer.php";
-
-          $mail = new PHPMailer\PHPMailer\PHPMailer();
-          $mail->IsSMTP(); // enable SMTP
-
-          $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-          $mail->SMTPAuth = true; // authentication enabled
-          $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-          $mail->Host = "smtp.gmail.com";
-          $mail->Port = 25; // or 587
-          $mail->IsHTML(true);
-          $mail->Username = "btiwatches.noreply@gmail.com";
-          $mail->Password = "BT!w@tches2020";
-          $mail->SetFrom("btiwatches.noreply@gmail.com");
-          $mail->Subject = "Test";
-          $mail->Body = "hello";
-          $mail->addAddress('btiwatches.noreply@gmail.com');
-
-          if(!$mail->Send()) {
-              echo "<p style=\'color: white;\'>Mailer Error: " . $mail->ErrorInfo ."</p>";
-          } else {
-              echo "Message has been sent";
-          }
           ?>
       </section>
       

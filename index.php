@@ -1,3 +1,4 @@
+<?php include 'assets/sendmail/sendmail.php';?>
 <!DOCTYPE html>
 <html lang="de-DE">
   <head>
@@ -388,10 +389,6 @@
                     <input type="submit" class="contact-form-btn" value="Senden">
                 </form>
             </div>
-
-          <?php
-
-          ?>
       </section>
       
     </section>

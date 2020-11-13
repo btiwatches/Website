@@ -36,7 +36,6 @@
   </head>
   <body>
   <?php
-  error_reporting(E_ERROR | E_PARSE);
       session_start();
 
         if(isset($_GET["Ausloggen"])) {
@@ -386,56 +385,18 @@
                     <label>
                         <textarea class="contact-form-text" name="nachricht" placeholder="Deine Nachricht"></textarea>
                     </label>
+
                     <input type="submit" class="contact-form-btn" value="Senden" name="submit">
                 </form>
+                <?php
+                $_SESSION["Name"] = $_POST["Name"];
+                $_SESSION["Email"] = $_POST["email"];
+                $_SESSION["Betreff"] = $_POST["betreff"];
+                $_SESSION["Nachricht"] = $_POST["nachricht"];
+
+                header('location:assets/sendmail/PHPMailer/sendmail.php');
+                ?>
             </div>
-          <?php
-          include 'assets/sendmail/PHPMailer/includes/PHPMailer.php';
-          include 'assets/sendmail/PHPMailer/includes/Exception.php';
-          include 'assets/sendmail/PHPMailer/includes/SMTP.php';
-
-          use PHPMailer\PHPMailer\PHPMailer;
-          use PHPMailer\PHPMailer\SMTP;
-          use PHPMailer\PHPMailer\Exception;
-
-          $betreff = $_POST["betreff"];
-          $nachricht = $_POST["nachricht"];
-          $name = $_POST["Name"];
-          $email = $_POST["email"];
-
-          date_default_timezone_set("Europe/Berlin");
-          $timestamp = time();
-          $datum = date("d.m.Y",$timestamp);
-          $uhrzeit = date("H:i",$timestamp);
-          if (isset($_POST["submit"])) {
-
-              $mail = new PHPMailer();
-
-              $mail->isSMTP();
-              $mail->Host = "smtp.gmail.com";
-              $mail->SMTPAuth = "true";
-              $mail->SMTPSecure = "tls";
-              $mail->Port = "587";
-              $mail->Username = "btiwatches.noreply@gmail.com";
-              $mail->Password = "BT!w@tches2020";
-              $mail->Subject = $betreff;
-              $mail->setFrom("btiwatches.noreply@gmail.com", "BTI Watches Mail System");
-              $mail->isHTML(true);
-              $mail->Body = "<h1>Sie haben eine neue Email von $name erhalten.</h1>
-                                <h3>In der Mail geht es um: $betreff</h3>
-                                <br>$nachricht<br><br>
-                                Für eine Rückemldung wenden sie sich an: $email
-                                <p style=\"font-size: smaller\">Diese Mail wurde am $datum um $uhrzeit vom <b>BTI Watches Mail System</b> verschickt.</p>";
-              $mail->addAddress("btiwatches.noreply@gmail.com");
-              if ($mail->Send()) {
-                  echo "<p style=\"color: green; text-align: center; \">Email wurde versendet</p>";
-              } else {
-                  echo "<p style=\"color: red; text-align: center; \">Fehler beim versenden der E-Mail</p>";
-              }
-              $mail->smtpClose();
-              header('location:index.php#contact');
-          }
-          ?>
       </section>
       
     </section>

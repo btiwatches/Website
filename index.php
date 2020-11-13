@@ -390,26 +390,34 @@
             </div>
 
           <?php
-          $empfaenger = "dennis.vandenbrock@btiwatches.de";
-          $absender   = $_GET["email"];
-          $betreff    = $_GET["betreff"];
-          $antwortan  = $absender;
-          $mailtext   = $_GET["nachricht"];
 
-          $header  = "MIME-Version: 1.0\r\n";
-          $header .= "Content-type: text/html; charset=utf-8\r\n";
+          require("PHPMailer/src/PHPMailer.php");
+          require("PHPMailer/src/SMTP.php");
 
-          $header .= "From: $absender\r\n";
-          $header .= "Reply-To: $antwortan\r\n";
-          // $header .= "Cc: $cc\r\n";  // falls an CC gesendet werden soll
-          $header .= "X-Mailer: PHP ". phpversion();
+          include_once "PHPMailer/src/Exception.php";
+          include_once "PHPMailer/src/PHPMailer.php";
 
-          ini_set("SMTP","ssl://smtp.gmail.com");
-          ini_set("smtp_port","465");
-          mail( $empfaenger,
-                  $betreff,
-                  $mailtext,
-                  $header);
+          $mail = new PHPMailer\PHPMailer\PHPMailer();
+          $mail->IsSMTP(); // enable SMTP
+
+          $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+          $mail->SMTPAuth = true; // authentication enabled
+          $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+          $mail->Host = "smtp.gmail.com";
+          $mail->Port = 465; // or 587
+          $mail->IsHTML(true);
+          $mail->Username = "btiwatches.noreply@gmail.com";
+          $mail->Password = "BT!w@tches2020";
+          $mail->SetFrom("noreply@btiwatches.de");
+          $mail->Subject = "Test";
+          $mail->Body = "hello";
+          $mail->addAddress('dennisvandenbrock54@gmail.com');
+
+          if(!$mail->Send()) {
+              echo "<p style=\'color: white;\'>Mailer Error: " . $mail->ErrorInfo ."</p>";
+          } else {
+              echo "Message has been sent";
+          }
           ?>
       </section>
       

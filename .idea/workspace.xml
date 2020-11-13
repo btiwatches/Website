@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51ae9676-ca38-4afb-9948-38cf8f5fd3ed" name="Default Changelist" comment="Email system">
-      <change afterPath="$PROJECT_DIR$/assets/sendmail/PHPMailer/sendmail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sendmail/PHPMailer/sendmailowner.php" afterDir="false" />
+    <list default="true" id="51ae9676-ca38-4afb-9948-38cf8f5fd3ed" name="Default Changelist" comment="Finished Email system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sendmail/PHPMailer/sendmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sendmail/PHPMailer/sendmail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +67,6 @@
       <workItem from="1605115327797" duration="68000" />
       <workItem from="1605250350557" duration="7431000" />
       <workItem from="1605280910501" duration="3402000" />
-      <workItem from="1605286879172" duration="4418000" />
     </task>
     <task id="LOCAL-00001" summary="favoriten.php Fehler Meldung bei nicht login">
       <created>1605099395665</created>
@@ -162,10 +160,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1605099380168" />
-    <state x="604" y="355" key="NewPhpFileDialog" timestamp="1605290570893">
+    <state x="604" y="355" key="NewPhpFileDialog" timestamp="1605265997503">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="604" y="355" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1605290570893" />
+    <state x="604" y="355" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1605265997503" />
     <state x="361" y="152" key="Vcs.Push.Dialog.v2" timestamp="1605266537544">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -176,9 +174,5 @@
     </state>
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864/112.-1050.1680.1050@0.0.1536.864" timestamp="1605250359978" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1605132289137" />
-    <state x="441" y="154" width="580" height="534" key="find.popup" timestamp="1605289037968">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="441" y="154" width="580" height="534" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1605289037968" />
   </component>
 </project>

@@ -304,6 +304,7 @@ $uhrzeit = date("H:i",$timestamp);
 
     if ($mail->Send()) {
         echo "<p style=\"color: green; text-align: center; \">Email wurde versendet</p>";
+        header('sendmailowner.php');
     } else {
         echo "<p style=\"color: red; text-align: center; \">Fehler beim versenden der E-Mail.<br>Fehler: $mail->ErrorInfo;</p>";
     }

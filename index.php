@@ -372,7 +372,7 @@
             <div class="contact-section">
             <h6>KONTAKT</h6>
             <div class="border"></div>
-                <form class="contact-form" action="index.php" method="post">
+                <form class="contact-form" action="assets/sendmail/PHPMailer/sendmail.php" method="post">
                     <label>
                         <input type="text" name="Name" class="contact-form-text" placeholder="Vor- und Nachname">
                     </label>
@@ -389,12 +389,16 @@
                     <input type="submit" class="contact-form-btn" value="Senden" name="submit">
                 </form>
                 <?php
-                $_SESSION["Name"] = $_POST["Name"];
-                $_SESSION["Email"] = $_POST["email"];
-                $_SESSION["Betreff"] = $_POST["betreff"];
-                $_SESSION["Nachricht"] = $_POST["nachricht"];
+                $name = $_POST["Name"];
+                $email = $_POST["email"];
+                $betreff = $_POST["betreff"];
+                $nachricht = $_POST["nachricht"];
 
-                header('location:assets/sendmail/PHPMailer/sendmail.php');
+                $_SESSION["Name"] = $name;
+                $_SESSION["Email"] = $email;
+                $_SESSION["Betreff"] = $betreff;
+                $_SESSION["Betreff"] = $betreff;
+                $_SESSION["Nachricht"] = $nachricht;
                 ?>
             </div>
       </section>

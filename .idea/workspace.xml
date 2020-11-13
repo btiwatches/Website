@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51ae9676-ca38-4afb-9948-38cf8f5fd3ed" name="Default Changelist" comment="Email system">
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sendmail/sendmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sendmail/sendmail.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +39,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1k92uB5BeYTNVpAUVL8pVQAxsx4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -59,7 +63,7 @@
       <updated>1605098706317</updated>
       <workItem from="1605098707442" duration="1653000" />
       <workItem from="1605115327797" duration="68000" />
-      <workItem from="1605250350557" duration="7194000" />
+      <workItem from="1605250350557" duration="7431000" />
     </task>
     <task id="LOCAL-00001" summary="favoriten.php Fehler Meldung bei nicht login">
       <created>1605099395665</created>
@@ -110,7 +114,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605265984946</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Email system">
+      <created>1605266380934</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605266380934</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Email system">
+      <created>1605266535743</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605266535743</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +147,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="favoriten.php Fehler Meldung bei nicht login" />
     <MESSAGE value="Email system" />
     <option name="LAST_COMMIT_MESSAGE" value="Email system" />
@@ -142,11 +161,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="604" y="355" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1605265997503" />
-    <state x="361" y="152" key="Vcs.Push.Dialog.v2" timestamp="1605265986839">
+    <state x="361" y="152" key="Vcs.Push.Dialog.v2" timestamp="1605266537544">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="507" y="-865" key="Vcs.Push.Dialog.v2/0.0.1536.864/112.-1050.1680.1050@112.-1050.1680.1050" timestamp="1605254133633" />
-    <state x="361" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1605265986839" />
+    <state x="361" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1605266537544" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605250359978">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

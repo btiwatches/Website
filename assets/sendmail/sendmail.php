@@ -12,7 +12,7 @@ $alert = '';
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $message = $_POST['message'];
+    $message = $_POST['nachricht'];
 
     try{
         $mail->isSMTP();

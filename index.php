@@ -36,38 +36,38 @@
   </head>
   <body>
   <?php
-      session_start();
+    error_reporting(E_ERROR | E_PARSE);
+  session_start();
 
-        if(isset($_GET["Ausloggen"])) {
-          Ausloggen();
-        }
-        function Ausloggen() {
-          session_unset();
-          header("Location:index.php");
+    if(isset($_GET["Ausloggen"])) {
+      Ausloggen();
+    }
+    function Ausloggen() {
+      session_unset();
+      header("Location:index.php");
+      exit;
+    }
+
+    if (isset($_GET["mail"])) {
+      $name = $_POST["Name"];
+      $email = $_POST["email"];
+      $betreff = $_POST["betreff"];
+      $nachricht = $_POST["nachricht"];
+      if (!empty($name) && !empty($email) && !empty($betreff) && !empty($nachricht)) {
+          $_SESSION["Name"] = $name;
+          $_SESSION["Email"] = $email;
+          $_SESSION["Betreff"] = $betreff;
+          $_SESSION["Betreff"] = $betreff;
+          $_SESSION["Nachricht"] = $nachricht;
+          header("Location:assets/sendmail/PHPMailer/sendmail.php");
           exit;
-        }
-
-        if (isset($_GET["mail"])) {
-          $name = $_POST["Name"];
-          $email = $_POST["email"];
-          $betreff = $_POST["betreff"];
-          $nachricht = $_POST["nachricht"];
-          if (!empty($name) && !empty($email) && !empty($betreff) && !empty($nachricht)) {
-              $_SESSION["Name"] = $name;
-              $_SESSION["Email"] = $email;
-              $_SESSION["Betreff"] = $betreff;
-              $_SESSION["Betreff"] = $betreff;
-              $_SESSION["Nachricht"] = $nachricht;
-              header("Location:assets/sendmail/PHPMailer/sendmail.php");
-              exit;
-          }
-          else {
-              $error = "<p style=\"color: red; text-align: center;\">Bitte füllen sie alle Felder aus!</p>";
-          }
-        }
-
-
-      ?>
+      }
+      else {
+          $error = "<p style=\"color: red; text-align: center;\">Bitte füllen sie alle Felder aus!</p>";
+          header('location:index.php');
+      }
+    }
+    ?>
     <section id="seite">
       <div class="stage" id="loader">
         <div id="wrapper">

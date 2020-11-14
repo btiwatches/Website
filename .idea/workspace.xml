@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acba68d2-f1a5-4fb4-b2af-e3d60b2715fd" name="Default Changelist" comment="" />
+    <list default="true" id="acba68d2-f1a5-4fb4-b2af-e3d60b2715fd" name="Default Changelist" comment="13.11.20">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,13 +30,72 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kFjGy2EanpCSLb8F0XKe2q7Tb0" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="acba68d2-f1a5-4fb4-b2af-e3d60b2715fd" name="Default Changelist" comment="" />
+      <created>1605303141129</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605303141129</updated>
+      <workItem from="1605303142189" duration="95000" />
+    </task>
+    <task id="LOCAL-00001" summary="13.11.20">
+      <created>1605303173460</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605303173460</updated>
+    </task>
+    <task id="LOCAL-00002" summary="13.11.20">
+      <created>1605303206893</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605303206893</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="13.11.20" />
+    <option name="LAST_COMMIT_MESSAGE" value="13.11.20" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1605303218741">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605303218741" />
   </component>
 </project>

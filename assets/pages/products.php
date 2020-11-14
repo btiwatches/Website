@@ -42,7 +42,8 @@
 </head>
 <body>
     <?php
-        error_reporting(E_ERROR | E_PARSE);
+    error_reporting(E_ERROR | E_PARSE);
+    $msg = "";
         session_start();
 
 
@@ -61,12 +62,10 @@
                 $id_uhren = $_GET["AddToCart"];
             }
             AddToCart($id_uhren);
-            header("location:products.php?id_uhren=$id_uhren");
         }
         function AddToCart($id_uhren) {
             $benutzer = $_SESSION["Benutzername"];
-
-            if ($benutzer != NULL) {
+            if (!empty($benutzer)) {
                 $db_link = mysqli_connect("localhost", "root", "", "btiwatches.de");
                 mysqli_set_charset($db_link, "utf8");
                 $sql_anweisung = "SELECT MAX(id_favorits)
@@ -93,11 +92,15 @@
                         $insert_anweisung2 = "INSERT INTO `tbl_kauf` (`user_id`, `favorits_id`, `hinzugefügt_am`)
                                                 VALUES ('$id_user', '$id_favorits', CURRENT_DATE())";
                         mysqli_query($db_link, $insert_anweisung2);
+                        $msg = "<p style=\"color: green\">Erfolgreich zur Favoritenliste hinzugefügt</p>";
+                        header('location:products.php?id_uhren='.$id_uhren.'');
+                        return $msg;
                     }
                 }
             }
             else {
-                echo"Yehe";
+                $msg = "<p style=\"color: red\">Bitte melden sie sich an!</p>";
+                return $msg;
             }
         }
     ?>
@@ -139,8 +142,8 @@
                             ?> <a href="products.php?Ausloggen=true" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center;">Ausloggen</div></a> <?php
                         }
                         else {
-                            ?>  <a href="login.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center; border-bottom: 1px solid white;" class="dropdown-p">Anmelden</div></a> <?php
-                            ?>  <a href="register.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center;" class="dropdown-p">Registrieren</div></a> <?php
+                            ?>  <a href="Login.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center; border-bottom: 1px solid white;" class="dropdown-p">Anmelden</div></a> <?php
+                            ?>  <a href="Register.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center;" class="dropdown-p">Registrieren</div></a> <?php
                         }
                     ?>
                 </div>
@@ -211,7 +214,7 @@
         echo"        <div class=\"column-xs-12 column-md-7\">";
         echo"            <div class=\"product-gallery\">";
         echo"            <div class=\"product-image\">";
-        echo"                <img src=\"../../images/$hersteller/$bildname\">";
+        echo"                <img src=\"../../images/$hersteller/$bildname\" alt=\"$uhrenname\">";
         echo"            </div>";
         echo"            </div>";
         echo"        </div>";
@@ -221,6 +224,9 @@
         echo"            <p>$preis</p>";
         echo"            <p>$gehaeusename</p>";
         echo"            </div>";
+        if (isset($_GET["AddToCart"])) {
+            echo AddToCart($id_uhren);
+        }
         echo"            <a href=\"products.php?AddToCart=$id_uhren\">
                             <button class=\"add-to-cart\">Zur Favoritenliste hinzufügen</button>
                         </a>";

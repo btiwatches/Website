@@ -115,8 +115,8 @@
                             ?> <a href="favoriten.php?Ausloggen=true" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center;">Ausloggen</div></a> <?php
                         }
                         else {
-                            ?>  <a href="login.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center; border-bottom: 1px solid white;" class="dropdown-p">Anmelden</div></a> <?php
-                            ?>  <a href="register.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center;" class="dropdown-p">Registrieren</div></a> <?php
+                            ?>  <a href="Login.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center; border-bottom: 1px solid white;" class="dropdown-p">Anmelden</div></a> <?php
+                            ?>  <a href="Register.php" style="color: white; text-decoration: none;"><div style="color: white; font-size: 14px; margin: 0; height: 65px; padding: 23px; text-align:center;" class="dropdown-p">Registrieren</div></a> <?php
                         }
                     ?>
                 </div>
@@ -186,7 +186,7 @@
                         echo "        <li class=\"items odd\">";
                         echo "        <div class=\"infoWrap\"> ";
                         echo "            <div class=\"cartSection\">";
-                        echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" />";
+                        echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" alt=\"$uhrenname\"/>";
                         echo "                <p class=\"itemNumber\" style=\"text-transform: uppercase;\">#$hersteller$id_uhren</p>";
                         echo "                <h3>$uhrenname<div style=\"font-size: 10px\">x $menge</div></h3>";
                         echo "                <p class=\"qty\" style=\"margin-top: 10px\">$infos</p>";
@@ -211,7 +211,7 @@
                         echo "        <li class=\"items even\">";
                         echo "        <div class=\"infoWrap\"> ";
                         echo "            <div class=\"cartSection\">";
-                        echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" />";
+                        echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" alt=\"$uhrenname\"/>";
                         echo "                <p class=\"itemNumber\" style=\"text-transform: uppercase;\">#$hersteller$id_uhren</p>";
                         echo "                <h3>$uhrenname<div style=\"font-size: 10px\">x $menge</div></h3>";
                         echo "                <p class=\"qty\" style=\"margin-top: 10px\">$infos</p>";

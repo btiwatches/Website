@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acba68d2-f1a5-4fb4-b2af-e3d60b2715fd" name="Default Changelist" comment="14.11.20">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pages/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pages/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/pages/favoriten.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pages/favoriten.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605303141129</updated>
       <workItem from="1605303142189" duration="95000" />
-      <workItem from="1605372348007" duration="1885000" />
+      <workItem from="1605372348007" duration="2237000" />
     </task>
     <task id="LOCAL-00001" summary="13.11.20">
       <created>1605303173460</created>
@@ -84,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605372371012</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="14.11.20">
+      <created>1605374377737</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605374377737</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,17 +114,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="14.11.20" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="336" y="381" key="#SQL_Dialects" timestamp="1605373562965">
+    <state x="336" y="381" key="#SQL_Dialects" timestamp="1605374603137">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="336" y="381" key="#SQL_Dialects/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605373562965" />
+    <state x="336" y="381" key="#SQL_Dialects/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605374603137" />
     <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605373535235">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605373535235" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1605372373954">
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1605374379312">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605372373954" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605374379312" />
   </component>
 </project>

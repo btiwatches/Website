@@ -140,7 +140,6 @@
 
 .myButton {
 	background-color:#ffffff;
-	border-radius:13px;
 	border:1px solid #000000;
 	display:inline-block;
 	cursor:pointer;
@@ -149,9 +148,9 @@
 	font-size:17px;
 	padding:10px;
 	text-decoration:none;
-  text-shadow:0px 1px 0px #000000;
-  transition: .3s;
-  margin-left: 5.3vw;
+    text-shadow:0px 1px 0px #000000;
+    transition: .3s;
+    margin-left: 5.3vw;
 }
 .myButton:hover {
   background-color:#000000;

@@ -936,4 +936,26 @@ max-width: 1024px) {
   .watches_box_text {
     display: none !IMPORTANT;
   }
+
+  .contact-section h6 {
+    font-size: 65px;
+  }
+
+  .MS-content .item img {
+    height: 325px !important;
+    margin-top: 10px !important;
+  }
+
+  .myButton {
+    margin-left: 9.3vw !important;
+  }
+
+  .headline_wacthes_name {
+    font-size: 23px !important;
+  }
+
+  .exampleSlider .MS-content .item p {
+    font-size: 10px !important;
+  }
+
 }

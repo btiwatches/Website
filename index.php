@@ -64,7 +64,6 @@
       }
       else {
           $error = "<p style=\"color: red; text-align: center;\">Bitte füllen sie alle Felder aus!</p>";
-          header('location:index.php');
       }
     }
     ?>
@@ -410,7 +409,9 @@
                         <textarea class="contact-form-text" name="nachricht" placeholder="Deine Nachricht"></textarea>
                     </label>
 
-                    <input type="submit" class="contact-form-btn" value="Senden" name="submit">
+                    <a href="index.php?mail=true">
+                        <input type="submit" class="contact-form-btn" value="Senden" name="submit">
+                    </a>
                 </form>
             </div>
       </section>

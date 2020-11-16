@@ -313,7 +313,7 @@ $uhrzeit = date("H:i",$timestamp);
 
         if ($mail->Send()) {
             echo "<p style=\"color: green; text-align: center; \">Verifications Email wurde versendet</p>";
-            header('loaction: ../../../index.php');
+            header('location: ../../../index.php');
         } else {
             echo "<p style=\"color: red; text-align: center; \">Fehler beim versenden der Verifications E-Mail</p>";
         }

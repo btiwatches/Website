@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="css/Products/products.css">
     <link rel="shortcut icon" href="../../images/Logo/white_small_logo.png" />
+    <link rel="stylesheet" href="../css/footer.css">
 
     <script src="https://kit.fontawesome.com/924baf914c.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -104,7 +105,7 @@
             }
         }
     ?>
-<header>
+<header class="products-header">
     <div class="nav">
         <input type="checkbox" id="nav-check">
             <div class="nav-header">
@@ -286,12 +287,46 @@
         echo"        </div>";
     }
         ?>
-<footer>
-  <div class="grid">
-    <div class="column-xs-12">
-      <p class="copyright">&copy; Copyright 2020 <a href="https://btiwatches.de" target="_blank">BTI Watches</a></p>
-    </div>
-  </div>
-</footer>
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+                <img src="images/Logo/white_small_logo.png" alt="Logo">
+
+
+                <p class="footer-links">
+                    <a href="../../index.php">HOME</a>
+                    |
+                    <a href="../../index.php#watches">UHREN</a>
+                    |
+                    <a href="../../index.php#ich">ABOUT US</a>
+                    |
+                    <a href="../../index.php#contact">KONTAKT</a>
+
+                </p>
+
+                <p class="footer-company-name">BTIWATCHES© </p>
+            </div>
+
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Hammfelddamm 2, 41460 Neuss</span></p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="#contact">BTI Watches</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>Über unsere Firma</span>
+                    BTI Watches, ist eine Website auf der sie viele Informationen zu Luxoriösen Uhren finden werden.</p>
+                <div class="footer-icons">
+                    <a href="https://github.com/btiwatches/btiwatchesWebsite" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/BtiWatches"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/btiwatches/" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>

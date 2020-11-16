@@ -810,3 +810,23 @@ footer {
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .products-header {
+    display: flex !important;
+  }
+
+  .grid.product {
+    padding: 0 0 1.5rem 0;
+    text-align: center !important;
+  }
+
+  .column-xs-12 {
+    border-right: 1px solid rgba(0, 0, 0, 0) !important;
+  }
+
+  .fa-heart {
+    display: none !important;
+  }
+}
+

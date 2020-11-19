@@ -647,6 +647,7 @@ a1 {
 .LogoNav {
   width: 63px;
   margin-top: 9px;
+  margin-bottom: 10px;
 }
 
 .gehhochlan {
@@ -946,9 +947,6 @@ max-width: 1024px) {
     margin-top: 10px !important;
   }
 
-  .myButton {
-    margin-left: 9.3vw !important;
-  }
 
   .headline_wacthes_name {
     font-size: 23px !important;

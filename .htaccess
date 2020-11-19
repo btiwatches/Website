@@ -1,0 +1,4 @@
+AuthName "BTI Watches Login-Bereich"
+AuthType Basic
+AuthUserFile C:/xampp/htdocs/.htpasswd
+require valid-user

@@ -821,12 +821,17 @@ footer {
     text-align: center !important;
   }
 
-  .column-xs-12 {
+  .column-md-3 {
     border-right: 1px solid rgba(0, 0, 0, 0) !important;
+    border-bottom: 1px solid gray;
   }
 
   .fa-heart {
     display: none !important;
+  }
+
+  .add-to-cart {
+    display: none;
   }
 }
 

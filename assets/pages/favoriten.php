@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/Logo/white_small_logo.png">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="css/Warenkorb/style.css">
     <title>Favoriten</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -12,6 +13,15 @@
 <?php
     error_reporting(E_ERROR | E_PARSE);
     session_start();
+    $page = $_SESSION["Page"];
+    $id_uhren = $_SESSION["id_uhren"];
+    if ($page == "index.php" or !isset($page)) {
+        $page = "../../index.php";
+    }
+    elseif ($page = "products.php") {
+        $page = "products.php?id_uhren=$id_uhren";
+    }
+
     $benutzername = $_SESSION["Benutzername"];
 
     if(isset($_GET["Ausloggen"])) {
@@ -86,9 +96,15 @@
     <div class="nav">
         <input type="checkbox" id="nav-check">
             <div class="nav-header">
-                <div class="nav-title">
-                    <img src="../../images/Logo/white_logo.png" alt="Logo">
-                </div>
+                <?php
+                echo "<div style=\"padding: 10px;\">";
+                echo "    <a href= \"$page\" style=\"
+                                        text-decoration: none;
+                                        color: white;\">";
+                echo "        <i class=\"fas fa-long-arrow-alt-left\"></i> Zurück";
+                echo "    </a>";
+                echo "</div>";
+                ?>
             </div>
         <div class="nav-btn">
             <label for="nav-check">
@@ -188,7 +204,7 @@
                         echo "            <div class=\"cartSection\">";
                         echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" alt=\"$uhrenname\"/>";
                         echo "                <p class=\"itemNumber\" style=\"text-transform: uppercase;\">#$hersteller$id_uhren</p>";
-                        echo "                <h3>$uhrenname<div style=\"font-size: 10px\">x $menge</div></h3>";
+                        echo "                <h3>$uhrenname</h3>";
                         echo "                <p class=\"qty\" style=\"margin-top: 10px\">$infos</p>";
                         echo "            </div>";
                         echo "            <div class=\"prodTotal cartSection\">";
@@ -213,7 +229,7 @@
                         echo "            <div class=\"cartSection\">";
                         echo "                <img src=\"../../images/$hersteller/$bildname\" class=\"itemImg\" alt=\"$uhrenname\"/>";
                         echo "                <p class=\"itemNumber\" style=\"text-transform: uppercase;\">#$hersteller$id_uhren</p>";
-                        echo "                <h3>$uhrenname<div style=\"font-size: 10px\">x $menge</div></h3>";
+                        echo "                <h3>$uhrenname</h3>";
                         echo "                <p class=\"qty\" style=\"margin-top: 10px\">$infos</p>";
                         echo "            </div>";
                         echo "            <div class=\"prodTotal cartSection\">";
@@ -248,4 +264,45 @@
     </div>
 </div>
 </body>
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+        <img src="images/Logo/white_small_logo.png" alt="Logo">
+
+
+        <p class="footer-links">
+            <a href="../../index.php">HOME</a>
+            |
+            <a href="../../index.php#watches">UHREN</a>
+            |
+            <a href="../../index.php#ich">ABOUT US</a>
+            |
+            <a href="../../index.php#contact">KONTAKT</a>
+
+        </p>
+
+        <p class="footer-company-name">BTIWATCHES© </p>
+    </div>
+
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Hammfelddamm 2, 41460 Neuss</span></p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="#contact">BTI Watches</a></p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>Über unsere Firma</span>
+            BTI Watches, ist eine Website auf der sie viele Informationen zu Luxoriösen Uhren finden werden.</p>
+        <div class="footer-icons">
+            <a href="https://github.com/btiwatches/btiwatchesWebsite" target="_blank" style="padding-top: 7px;"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/BtiWatches" style="padding-top: 7px;"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/btiwatches/" target="_blank" style="padding-top: 7px;"><i class="fa fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
 </html>

@@ -12,11 +12,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/master.js"></script>
     <?php
+    session_start();
+    $_SESSION["Page"] = "products.php";
     if (isset($_GET["AddToCart"])) {
         $id_uhren = $_GET["AddToCart"];
+        $_SESSION["id_uhren"] = $id_uhren;
     }
     else {
         $id_uhren = $_GET["id_uhren"];
+        $_SESSION["id_uhren"] = $id_uhren;
     }
 
     $db_link = mysqli_connect("localhost", "root", "", "btiwatches.de");
@@ -149,143 +153,144 @@
                     ?>
                 </div>
             </div>
-        </div><?php
-    $db_link = mysqli_connect("localhost", "root", "", "btiwatches.de");
+        </div>
+        <?php
+            $db_link = mysqli_connect("localhost", "root", "", "btiwatches.de");
 
-    mysqli_set_charset($db_link, "utf8");
+            mysqli_set_charset($db_link, "utf8");
 
-    $sql_anweisung = "  SELECT  *
-                          FROM    tbl_uhren AS u,
-                                  tbl_hersteller as h,
-                                  tbl_zifferblatt AS z,
-                                  tbl_uhrwerk AS uw,
-                                  tbl_gehaeuse AS g,
-                                  tbl_armband AS a,
-                                  tbl_technische_details AS td
-                          WHERE   h.id_hersteller = u.hersteller_id
-                            AND   u.technische_details_id = td.id_technische_details
-                            AND   td.gehaeuse_id = g.id_gehaeuse
-                            AND   td.uhrwerk_id = uw.id_uhrwerk
-                            AND   td.armband_id = a.id_armband
-                            AND   td.zifferblatt_id = z.id_zifferblatt
-                            AND   u.id_uhren = '$id_uhren'";
+            $sql_anweisung = "  SELECT  *
+                                  FROM    tbl_uhren AS u,
+                                          tbl_hersteller as h,
+                                          tbl_zifferblatt AS z,
+                                          tbl_uhrwerk AS uw,
+                                          tbl_gehaeuse AS g,
+                                          tbl_armband AS a,
+                                          tbl_technische_details AS td
+                                  WHERE   h.id_hersteller = u.hersteller_id
+                                    AND   u.technische_details_id = td.id_technische_details
+                                    AND   td.gehaeuse_id = g.id_gehaeuse
+                                    AND   td.uhrwerk_id = uw.id_uhrwerk
+                                    AND   td.armband_id = a.id_armband
+                                    AND   td.zifferblatt_id = z.id_zifferblatt
+                                    AND   u.id_uhren = '$id_uhren'";
 
 
-    $ergebnismenge = mysqli_query($db_link, $sql_anweisung);
-    
-    if($datenzeile = mysqli_fetch_assoc($ergebnismenge))
-    {
-        /*UHREN INFOS*/
-        $id_uhren=$datenzeile["id_uhren"];
-        $uhrenname=$datenzeile["bezeichnunguhren"];
-        $hersteller=$datenzeile["bezeichnunghersteller"];
-        $preis=$datenzeile["preis"];
-        $bildname=$datenzeile["bildname"];
-        /*GEHÄUSE INFOS*/
-        $gehaeusename=$datenzeile["bezeichnunggehaeuse"];
-        $gehaeuseaufbau=$datenzeile["aufbau"];
-        $gehaeusedruchmesser=$datenzeile["durchmesser"];
-        $gehaeusematerial=$datenzeile["materialgehaeuse"];
-        $gehaeuseluenette=$datenzeile["luenette"];
-        $gehaeuseaufzugskrone=$datenzeile["aufzugskrone"];
-        $gehaeuseuhrglas=$datenzeile["uhrglas"];
-        $gehaeusewasserdichtheit=$datenzeile["wasserdichtheit"];
-        /*UHRWERK INFOS*/
-        $uhrwerkbezeichnung=$datenzeile["bezeichnunguhrwerk"];
-        $uhrwerkkaliber=$datenzeile["kalieber"];
-        $uhrwerkganggenauigkeit=$datenzeile["ganggenauigkeit"];
-        $uhrwerkfunktionen=$datenzeile["funktionen"];
-        $uhrwerkaufzug=$datenzeile["aufzug"];
-        $uhrwerkgangreserve=$datenzeile["gangreserve"];
-        /*ARMBAND INFOS*/
-        $armbandbezeichnung=$datenzeile["bezeichnungarmband"];
-        $armbandmaterial=$datenzeile["materialarmband"];
-        $armbandschliesse=$datenzeile["schliesse"];
-        /*ZIFFERBLATT INFOS*/
-        $zifferblattbezeichnung=$datenzeile["bezeichnungzifferblatt"];
-        echo"   <div class=\"location\">";
-        echo"       <div class=\"locationschrift\">";
-        echo"           <a href=\"../../index.php\" class=\"locationlink\">Home</a> / Uhren / $hersteller / $uhrenname ";
-        echo"       </div>";
-        echo"   </div>";
-        echo"   </header>";
-        echo"   <main>";
-        echo"    <div class=\"container\">";
-        echo"        <div class=\"grid product\">";
-        echo"        <div class=\"column-xs-12 column-md-7\">";
-        echo"            <div class=\"product-gallery\">";
-        echo"            <div class=\"product-image\">";
-        echo"                <img src=\"../../images/$hersteller/$bildname\" alt=\"$uhrenname\">";
-        echo"            </div>";
-        echo"            </div>";
-        echo"        </div>";
-        echo"        <div class=\"column-xs-12 column-md-5\">";
-        echo"            <h1>$uhrenname</h1>";
-        echo"            <div class=\"description\">";
-        echo"            <p>$preis</p>";
-        echo"            <p>$gehaeusename</p>";
-        echo"            </div>";
-        if (isset($_GET["AddToCart"])) {
-            echo AddToCart($id_uhren);
-        }
-        echo"            <a href=\"products.php?AddToCart=$id_uhren\">
-                            <button class=\"add-to-cart\">Zur Favoritenliste hinzufügen</button>
-                        </a>";
-        echo"        </div>";
-        echo"        </div>";
-        echo"        <div class=\"grid related-products\">";
-        echo"        <div class=\"column-xs-12\">";
-        echo"            <h3>Uhren Infos</h3>";
-        echo"        </div>";
-        echo"        <div class=\"column-xs-12 column-md-3\" style=\"border-right: 1px solid gray\">";
-        echo"            <h4>Zifferblatt</h4>";
-        echo"            <p class=\"price\"><b>Zifferblatt:</b><div style=\"font-size: 14px\"> $zifferblattbezeichnung</div></p>";
-        echo"        </div>";
-        echo"        <div class=\"column-xs-12 column-md-3\" style=\"border-right: 1px solid gray\">";
-        echo"          <h4>Uhrwerk</h4>";
-        echo"            <p class=\"price\"><b>Uhrwerk:</b><div style=\"font-size: 14px\"> $uhrwerkbezeichnung</div></p>";
-        echo"            <p class=\"price\"><b>Aufzug:</b><div style=\"font-size: 14px\"> $uhrwerkaufzug</div></p>";
-        echo"            <p class=\"price\"><b>Kaliber:</b><div style=\"font-size: 14px\"> $uhrwerkkaliber</div></p>";
-        echo"            <p class=\"price\"><b>Funktionen:</b><div style=\"font-size: 14px\"> $uhrwerkfunktionen</div></p>";
-        echo"            <p class=\"price\"><b>Gangreserve:</b><div style=\"font-size: 14px\"> $uhrwerkgangreserve</div></p>";
-        echo"            <p class=\"price\"><b>Ganggenauigkeit:</b><div style=\"font-size: 14px\"> $uhrwerkganggenauigkeit</div></p>";
-        echo"        </div>";
-        echo"        <div class=\"column-xs-12 column-md-3\" style=\"border-right: 1px solid gray\">";
-        echo"          <h4>Armband</h4>";
-        echo"            <p class=\"price\"><b>Armband:</b><div style=\"font-size: 14px\"> $armbandbezeichnung</div></p>";
-        echo"            <p class=\"price\"><b>Material:</b><div style=\"font-size: 14px\"> $armbandmaterial</div></p>";
-        echo"            <p class=\"price\"><b>Schließe:</b><div style=\"font-size: 14px\"> $armbandschliesse</div></p>";
-        echo"        </div>";
-        echo"        <div class=\"column-xs-12 column-md-3\">";
-        echo"          <h4>Gehäuse</h4>";
-        echo"            <p class=\"price\"><b>Gehäuse:</b><div style=\"font-size: 14px\"> $gehaeusename</div></p>";
-        echo"            <p class=\"price\"><b>Aufbau:</b><div style=\"font-size: 14px\"> $gehaeuseaufbau</div></p>";
-        echo"            <p class=\"price\"><b>Durchmesser:</b><div style=\"font-size: 14px\"> $gehaeusedruchmesser</div></p>";
-        echo"            <p class=\"price\"><b>Material:</b><div style=\"font-size: 14px\"> $gehaeusematerial</div></p>";
-        echo"            <p class=\"price\"><b>Lünette:</b><div style=\"font-size: 14px\"> $gehaeuseluenette</div></p>";
-        echo"            <p class=\"price\"><b>Aufzugskrone:</b><div style=\"font-size: 14px\"> $gehaeuseaufzugskrone</div></p>";
-        echo"            <p class=\"price\"><b>Uhrglas:</b><div style=\"font-size: 14px\"> $gehaeuseuhrglas</div></p>";
-        echo"            <p class=\"price\"><b>Wasserdichtheit:</b><div style=\"font-size: 14px\"> $gehaeusewasserdichtheit</div></p>";
-        echo"        </div>";
-        echo"        </div>";
-        echo"       </div>";
-        echo"    </main>";
-    }
-    else {
-        echo"   <div class=\"location\">";
-        echo"       <div class=\"locationschrift\">";
-        echo"           <a href=\"../../index.php\" class=\"locationlink\">Home</a> / Uhren / ? / ? ";
-        echo"       </div>";
-        echo"   </div>";
-        echo"   </header>";
-        echo"   <main>";
-        echo"        <div class=\"column-xs-12 column-md-5\" style=\"text-align: center; width: 42vw; margin-left: 29vw; height: 30vh; margin-top: 25vh;\">";
-        echo"            <h1>Keine Uhr in der Datenbank gefunden</h1>";
-        echo"            <div class=\"description\">";
-        echo"            <p>Bitte gehen sie zurück zur <a href=\"https://btiwatches.de/\">Homepage</a></p>";
-        echo"            </div>";
-        echo"        </div>";
-    }
+            $ergebnismenge = mysqli_query($db_link, $sql_anweisung);
+
+            if($datenzeile = mysqli_fetch_assoc($ergebnismenge))
+            {
+                /*UHREN INFOS*/
+                $id_uhren=$datenzeile["id_uhren"];
+                $uhrenname=$datenzeile["bezeichnunguhren"];
+                $hersteller=$datenzeile["bezeichnunghersteller"];
+                $preis=$datenzeile["preis"];
+                $bildname=$datenzeile["bildname"];
+                /*GEHÄUSE INFOS*/
+                $gehaeusename=$datenzeile["bezeichnunggehaeuse"];
+                $gehaeuseaufbau=$datenzeile["aufbau"];
+                $gehaeusedruchmesser=$datenzeile["durchmesser"];
+                $gehaeusematerial=$datenzeile["materialgehaeuse"];
+                $gehaeuseluenette=$datenzeile["luenette"];
+                $gehaeuseaufzugskrone=$datenzeile["aufzugskrone"];
+                $gehaeuseuhrglas=$datenzeile["uhrglas"];
+                $gehaeusewasserdichtheit=$datenzeile["wasserdichtheit"];
+                /*UHRWERK INFOS*/
+                $uhrwerkbezeichnung=$datenzeile["bezeichnunguhrwerk"];
+                $uhrwerkkaliber=$datenzeile["kalieber"];
+                $uhrwerkganggenauigkeit=$datenzeile["ganggenauigkeit"];
+                $uhrwerkfunktionen=$datenzeile["funktionen"];
+                $uhrwerkaufzug=$datenzeile["aufzug"];
+                $uhrwerkgangreserve=$datenzeile["gangreserve"];
+                /*ARMBAND INFOS*/
+                $armbandbezeichnung=$datenzeile["bezeichnungarmband"];
+                $armbandmaterial=$datenzeile["materialarmband"];
+                $armbandschliesse=$datenzeile["schliesse"];
+                /*ZIFFERBLATT INFOS*/
+                $zifferblattbezeichnung=$datenzeile["bezeichnungzifferblatt"];
+                echo"   <div class=\"location\">";
+                echo"       <div class=\"locationschrift\">";
+                echo"           <a href=\"../../index.php\" class=\"locationlink\">Home</a> / Uhren / $hersteller / $uhrenname ";
+                echo"       </div>";
+                echo"   </div>";
+                echo"   </header>";
+                echo"   <main>";
+                echo"    <div class=\"container\">";
+                echo"        <div class=\"grid product\">";
+                echo"        <div class=\"column-xs-12 column-md-7\">";
+                echo"            <div class=\"product-gallery\">";
+                echo"            <div class=\"product-image\">";
+                echo"                <img src=\"../../images/$hersteller/$bildname\" alt=\"$uhrenname\">";
+                echo"            </div>";
+                echo"            </div>";
+                echo"        </div>";
+                echo"        <div class=\"column-xs-12 column-md-5\">";
+                echo"            <h1>$uhrenname</h1>";
+                echo"            <div class=\"description\">";
+                echo"            <p>$preis</p>";
+                echo"            <p>$gehaeusename</p>";
+                echo"            </div>";
+                if (isset($_GET["AddToCart"])) {
+                    echo AddToCart($id_uhren);
+                }
+                echo"            <a href=\"products.php?AddToCart=$id_uhren\">
+                                    <button class=\"add-to-cart\">Zur Favoritenliste hinzufügen</button>
+                                </a>";
+                echo"        </div>";
+                echo"        </div>";
+                echo"        <div class=\"grid related-products\">";
+                echo"        <div class=\"column-xs-12\">";
+                echo"            <h3>Uhren Infos</h3>";
+                echo"        </div>";
+                echo"        <div class=\"column-xs-12 column-md-3\" style=\"border-right: 1px solid gray\">";
+                echo"            <h4>Zifferblatt</h4>";
+                echo"            <p class=\"price\"><b>Zifferblatt:</b><div style=\"font-size: 14px\"> $zifferblattbezeichnung</div></p>";
+                echo"        </div>";
+                echo"        <div class=\"column-xs-12 column-md-3\" style=\"border-right: 1px solid gray\">";
+                echo"          <h4>Uhrwerk</h4>";
+                echo"            <p class=\"price\"><b>Uhrwerk:</b><div style=\"font-size: 14px\"> $uhrwerkbezeichnung</div></p>";
+                echo"            <p class=\"price\"><b>Aufzug:</b><div style=\"font-size: 14px\"> $uhrwerkaufzug</div></p>";
+                echo"            <p class=\"price\"><b>Kaliber:</b><div style=\"font-size: 14px\"> $uhrwerkkaliber</div></p>";
+                echo"            <p class=\"price\"><b>Funktionen:</b><div style=\"font-size: 14px\"> $uhrwerkfunktionen</div></p>";
+                echo"            <p class=\"price\"><b>Gangreserve:</b><div style=\"font-size: 14px\"> $uhrwerkgangreserve</div></p>";
+                echo"            <p class=\"price\"><b>Ganggenauigkeit:</b><div style=\"font-size: 14px\"> $uhrwerkganggenauigkeit</div></p>";
+                echo"        </div>";
+                echo"        <div class=\"column-xs-12 column-md-3\" style=\"border-right: 1px solid gray\">";
+                echo"          <h4>Armband</h4>";
+                echo"            <p class=\"price\"><b>Armband:</b><div style=\"font-size: 14px\"> $armbandbezeichnung</div></p>";
+                echo"            <p class=\"price\"><b>Material:</b><div style=\"font-size: 14px\"> $armbandmaterial</div></p>";
+                echo"            <p class=\"price\"><b>Schließe:</b><div style=\"font-size: 14px\"> $armbandschliesse</div></p>";
+                echo"        </div>";
+                echo"        <div class=\"column-xs-12 column-md-3\">";
+                echo"          <h4>Gehäuse</h4>";
+                echo"            <p class=\"price\"><b>Gehäuse:</b><div style=\"font-size: 14px\"> $gehaeusename</div></p>";
+                echo"            <p class=\"price\"><b>Aufbau:</b><div style=\"font-size: 14px\"> $gehaeuseaufbau</div></p>";
+                echo"            <p class=\"price\"><b>Durchmesser:</b><div style=\"font-size: 14px\"> $gehaeusedruchmesser</div></p>";
+                echo"            <p class=\"price\"><b>Material:</b><div style=\"font-size: 14px\"> $gehaeusematerial</div></p>";
+                echo"            <p class=\"price\"><b>Lünette:</b><div style=\"font-size: 14px\"> $gehaeuseluenette</div></p>";
+                echo"            <p class=\"price\"><b>Aufzugskrone:</b><div style=\"font-size: 14px\"> $gehaeuseaufzugskrone</div></p>";
+                echo"            <p class=\"price\"><b>Uhrglas:</b><div style=\"font-size: 14px\"> $gehaeuseuhrglas</div></p>";
+                echo"            <p class=\"price\"><b>Wasserdichtheit:</b><div style=\"font-size: 14px\"> $gehaeusewasserdichtheit</div></p>";
+                echo"        </div>";
+                echo"        </div>";
+                echo"       </div>";
+                echo"    </main>";
+            }
+            else {
+                echo"   <div class=\"location\">";
+                echo"       <div class=\"locationschrift\">";
+                echo"           <a href=\"../../index.php\" class=\"locationlink\">Home</a> / Uhren / ? / ? ";
+                echo"       </div>";
+                echo"   </div>";
+                echo"   </header>";
+                echo"   <main>";
+                echo"        <div class=\"column-xs-12 column-md-5\" style=\"text-align: center; width: 42vw; margin-left: 29vw; height: 30vh; margin-top: 25vh;\">";
+                echo"            <h1>Keine Uhr in der Datenbank gefunden</h1>";
+                echo"            <div class=\"description\">";
+                echo"            <p>Bitte gehen sie zurück zur <a href=\"https://btiwatches.de/\">Homepage</a></p>";
+                echo"            </div>";
+                echo"        </div>";
+            }
         ?>
         <footer class="footer-distributed">
 
@@ -322,9 +327,9 @@
                     <span>Über unsere Firma</span>
                     BTI Watches, ist eine Website auf der sie viele Informationen zu Luxoriösen Uhren finden werden.</p>
                 <div class="footer-icons">
-                    <a href="https://github.com/btiwatches/btiwatchesWebsite" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/BtiWatches"><i class="fa fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/btiwatches/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://github.com/btiwatches/btiwatchesWebsite" target="_blank" style="padding-top: 7px;"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/BtiWatches" style="padding-top: 7px;"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/btiwatches/" target="_blank" style="padding-top: 7px;"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
         </footer>

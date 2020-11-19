@@ -37,7 +37,8 @@
   <body>
   <?php
     error_reporting(E_ERROR | E_PARSE);
-  session_start();
+    session_start();
+    $_SESSION["Page"] = "index.php";
 
     if(isset($_GET["Ausloggen"])) {
       Ausloggen();
@@ -185,8 +186,7 @@
 
       <section class="home" id="home">
         <video
-          src="images/landing/landing.mp4"
-          playsinline
+          src="https://node--andrea.vivo.sx/vod/yAKrbYBdRJgxQpVzk5vZkg/1605734063/0064262591"
           autoplay
           muted
           loop
@@ -240,6 +240,60 @@
                   <p class="item-info">Oyster, 41 mm, Edelstahl Oystersteel</p>
                   <a href="assets/pages/products.php?id_uhren=4" class="myButton">Weitere Infos</a>
               </div>
+
+              <div class="item">
+                  <a href="assets/pages/products.php?id_uhren=5">
+                      <img src="images/rolex/DAY‑DATE 40.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">Oyster Perpetual 41</h2>
+                  <p class="item-info">Oyster, 40 mm, Gelbgold</p>
+                  <a href="assets/pages/products.php?id_uhren=5" class="myButton">Weitere Infos</a>
+              </div>
+
+              <div class="item">
+                  <a href="assets/pages/products.php?id_uhren=6">
+                      <img src="images/rolex/Yachtmaster 42.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">YACHT‑MASTER 42</h2>
+                  <p class="item-info">Oyster, 42 mm, Weißgold</p>
+                  <a href="assets/pages/products.php?id_uhren=6" class="myButton">Weitere Infos</a>
+              </div>
+
+              <div class="item">
+                  <a href="assets/pages/products.php?id_uhren=7">
+                      <img src="images/rolex/Gmt-master 2.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">GMT-Master II</h2>
+                  <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
+                  <a href="assets/pages/products.php?id_uhren=7" class="myButton">Weitere Infos</a>
+              </div>
+
+              <div class="item">
+                  <a href="assets/pages/products.php?id_uhren=8">
+                      <img src="images/rolex/Ladydatejust.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">LADY‑DATEJUST</h2>
+                  <p class="item-info">Oyster, 28 mm, Edelstahl Oystersteel und Gelbgold</p>
+                  <a href="assets/pages/products.php?id_uhren=8" class="myButton">Weitere Infos</a>
+              </div>
+
+              <div class="item">
+                  <a href="assets/pages/products.php?id_uhren=9">
+                      <img src="images/rolex/rolex airking.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">AIR‑KING</h2>
+                  <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
+                  <a href="assets/pages/products.php?id_uhren=9" class="myButton">Weitere Infos</a>
+              </div>
+
+              <div class="item">
+                  <a href="assets/pages/products.php?id_uhren=10">
+                      <img src="images/rolex/rolex milgauss.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">MILGAUSS</h2>
+                  <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
+                  <a href="assets/pages/products.php?id_uhren=10" class="myButton">Weitere Infos</a>
+              </div>
           </div>
           <div class="MS-controls">
               <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
@@ -253,24 +307,12 @@
         <div id="exampleSlider2" class="exampleSlider">
           <div class="MS-content">
               <div class="item">
-                  <img src="https://btiwatches.de/images/breitling/AVENGER%20AUTOMATIC%20GMT%2043%20PREIS%20(3.700).png" alt="">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
-              </div>
-              
-              <div class="item">
-                  <img src="https://btiwatches.de/images/breitling/CHRONOMAT%20B01%2042%20PREIS%20(7.700).png" alt="">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
-              </div>
-
-              <div class="item">
-                  <img src="https://btiwatches.de/images/breitling/Navitimer%20Automatic%2035%20PREIS(3700).png" alt="">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
+                  <a href="assets/pages/products.php?id_uhren=10">
+                      <img src="images/rolex/rolex milgauss.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">MILGAUSS</h2>
+                  <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
+                  <a href="assets/pages/products.php?id_uhren=10" class="myButton">Weitere Infos</a>
               </div>
           </div>
           <div class="MS-controls">
@@ -285,24 +327,12 @@
         <div id="exampleSlider3" class="exampleSlider">
           <div class="MS-content">
               <div class="item">
-                  <img src="https://btiwatches.de/images/audemars_pique/Jules%20PREIS%2027K.png" alt="" style="transform: scale(0.8);">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
-              </div>
-              
-              <div class="item">
-                  <img src="https://btiwatches.de/images/audemars_pique/Millenary%20PREIS%2055K.png" alt="" style="transform: scale(0.8);">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
-              </div>
-
-              <div class="item">
-                  <img src="https://btiwatches.de/images/audemars_pique/Royal%20Oak%20PREIS%2081K.png" alt="" style="transform: scale(0.8);">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
+                  <a href="assets/pages/products.php?id_uhren=10">
+                      <img src="images/rolex/rolex milgauss.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">MILGAUSS</h2>
+                  <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
+                  <a href="assets/pages/products.php?id_uhren=10" class="myButton">Weitere Infos</a>
               </div>
           </div>
           <div class="MS-controls">
@@ -316,30 +346,13 @@
         <div id="exampleSlider4" class="exampleSlider">
           <div class="MS-content">
               <div class="item">
-                  <img src="https://btiwatches.de/images/hublot/Integral%20King%20Gold%20Pave%2042mm.png" alt="">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
+                  <a href="assets/pages/products.php?id_uhren=10">
+                      <img src="images/rolex/rolex milgauss.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">MILGAUSS</h2>
+                  <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
+                  <a href="assets/pages/products.php?id_uhren=10" class="myButton">Weitere Infos</a>
               </div>
-              
-              <div class="item">
-                  <img src="https://btiwatches.de/images/hublot/Meca-10%20titanium%2045mm.png" alt="">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
-              </div>
-
-              <div class="item">
-                  <img src="https://btiwatches.de/images/hublot/Steel%20Blue%2044mm.png" alt="">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
-              </div>
-          </div>
-          <div class="MS-controls">
-              <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-              <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-          </div>
         </div>
 
         <div style="border-top: 1px solid gray; height: 1px; margin-top: -70px;"></div>
@@ -347,24 +360,12 @@
         <div id="exampleSlider5" class="exampleSlider">
           <div class="MS-content">
               <div class="item">
-                  <img src="https://btiwatches.de/images/richard_mille/RM%2053-1%20PREIS%20(1.200.000).png" alt="" style="transform: scale(0.8);">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
-              </div>
-              
-              <div class="item">
-                  <img src="https://btiwatches.de/images/richard_mille/RM%2061-01%20PREIS%20(117.500).png" alt="" style="transform: scale(0.8);">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
-              </div>
-
-              <div class="item">
-                  <img src="https://btiwatches.de/images/richard_mille/RM%2070-01%20PREIS%20(890.00).png" alt="" style="transform: scale(0.8);">
-                  <h2 class="headline_wacthes_name">UHREN NAME</h2>
-                  <p class="item-info">UHREN INFOS</p>
-                  <a href="#" class="myButton">Weitere Infos</a>
+                  <a href="assets/pages/products.php?id_uhren=10">
+                      <img src="images/rolex/rolex milgauss.png" alt="">
+                  </a>
+                  <h2 class="headline_wacthes_name">MILGAUSS</h2>
+                  <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
+                  <a href="assets/pages/products.php?id_uhren=10" class="myButton">Weitere Infos</a>
               </div>
           </div>
           <div class="MS-controls">
@@ -481,27 +482,27 @@
   <script src="assets/js/multislider.min.js"></script>
   <script>
   $('#exampleSlider1').multislider({
-      interval: false,
+      interval: 5000,
       slideAll: false,
       duration: 700
   });
   $('#exampleSlider2').multislider({
-      interval: false,
+      interval: 5000,
       slideAll: false,
       duration: 700
   });
   $('#exampleSlider3').multislider({
-      interval: false,
+      interval: 5000,
       slideAll: false,
       duration: 700
   });
   $('#exampleSlider4').multislider({
-      interval: false,
+      interval: 5000,
       slideAll: false,
       duration: 700
   });
   $('#exampleSlider5').multislider({
-      interval: false,
+      interval: 5000,
       slideAll: false,
       duration: 700
   });

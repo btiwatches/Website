@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>BTI WATCHES</title>
+      <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/Logo/white_small_logo.png" />
     
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -31,7 +32,22 @@
       };
     </script>
 
+    <style>
+        #background-video {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
 
+        #background-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 
   </head>
   <body>
@@ -167,13 +183,9 @@
               <li>
                 <a href="#contact" onclick="remove()">Kontakt</a>
               </li>
-
-              <div class="StockBti">
-                Suchen sie noch die perfekten Schuhe zu ihrer Uhr?
-                <p class="StockBtiLink">
-                  Besuchen sie <a href="http://stockbti.de/" target="_blank">StockBti.de</a>.
-                </p>
-              </div>
+              <li>
+                <a href="http://stockbti.de/" class="StockBti">STOCK<b style="color: red">BTI</b></a>
+              </li>
             </ul>
           </div>
           <span class="navTrigger">
@@ -185,14 +197,45 @@
       </nav>
 
       <section class="home" id="home">
-        <video
-          src="https://node--andrea.vivo.sx/vod/yAKrbYBdRJgxQpVzk5vZkg/1605734063/0064262591"
-          autoplay
-          muted
-          loop
-          id="myVideo"
-        ></video>
+          <div id="background-video">
+              <div id="ytplayer" style=""></div>
+          </div>
+          <script type="text/javascript">
+              var tag = document.createElement('script');
+              tag.src = "https://www.youtube.com/player_api";
+              var firstScriptTag = document.getElementsByTagName('script')[0];
+              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+              var player;
 
+              function onYouTubePlayerAPIReady() {
+                  player = new YT.Player('ytplayer', {
+                      height: '390',
+                      width: '640',
+                      videoId: '2Vk8yNS5q9E',
+                      playerVars: {
+                          autoplay: 1,
+                          controls: 0,
+                          disablekb: 1,
+                          loop: 0,
+                          modestbranding: 1,
+                          showinfo: 0,
+                          autohide: 1,
+                          color: 'white',
+                          iv_load_policy: 3,
+                          theme: 'light',
+                          rel: 0,
+                          playlist: 'zVibsdTxM7Q'
+                      },
+
+                      events: {
+                          'onReady': onPlayerReady,
+                      }
+                  });
+              }
+              function onPlayerReady(event){
+                  player.mute();
+              }
+          </script>
         <div class="blackblock" id="blackblock"></div>
         
       <div class="watches_box">
@@ -200,7 +243,7 @@
         </div>
       </section>
 
-      <section id="watches">
+      <section id="watches" style="margin-top: 10%">
         <h1 class="headline_wacthes">ROLEX <b style="color: gold;">WATCHES</b></h1>
         <div id="exampleSlider1" class="exampleSlider">
           <div class="MS-content">
@@ -341,38 +384,43 @@
           </div>
         </div>
 
-        <div style="border-top: 1px solid gray; height: 1px; margin-top: -70px;"></div>
-        <h1 class="headline_wacthes">HUBOLT <b style="color: gold;">WATCHES</b></h1>
-        <div id="exampleSlider4" class="exampleSlider">
-          <div class="MS-content">
-              <div class="item">
-                  <a href="assets/pages/products.php?id_uhren=10">
-                      <img src="images/rolex/rolex milgauss.png" alt="">
-                  </a>
-                  <h2 class="headline_wacthes_name">MILGAUSS</h2>
-                  <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
-                  <a href="assets/pages/products.php?id_uhren=10" class="myButton">Weitere Infos</a>
+          <div style="border-top: 1px solid gray; height: 1px; margin-top: -70px;"></div>
+          <h1 class="headline_wacthes">Hubolt <b style="color: gold;">WATCHES</b></h1>
+          <div id="exampleSlider4" class="exampleSlider">
+              <div class="MS-content">
+                  <div class="item">
+                      <a href="assets/pages/products.php?id_uhren=10">
+                          <img src="images/rolex/rolex milgauss.png" alt="">
+                      </a>
+                      <h2 class="headline_wacthes_name">MILGAUSS</h2>
+                      <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
+                      <a href="assets/pages/products.php?id_uhren=10" class="myButton">Weitere Infos</a>
+                  </div>
               </div>
-        </div>
+              <div class="MS-controls">
+                  <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                  <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+              </div>
+          </div>
 
-        <div style="border-top: 1px solid gray; height: 1px; margin-top: -70px;"></div>
-        <h1 class="headline_wacthes">RICHARD MILLE <b style="color: gold;">WATCHES</b></h1>
-        <div id="exampleSlider5" class="exampleSlider">
-          <div class="MS-content">
-              <div class="item">
-                  <a href="assets/pages/products.php?id_uhren=10">
-                      <img src="images/rolex/rolex milgauss.png" alt="">
-                  </a>
-                  <h2 class="headline_wacthes_name">MILGAUSS</h2>
-                  <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
-                  <a href="assets/pages/products.php?id_uhren=10" class="myButton">Weitere Infos</a>
+          <div style="border-top: 1px solid gray; height: 1px; margin-top: -70px;"></div>
+          <h1 class="headline_wacthes">RICHARD MILLE <b style="color: gold;">WATCHES</b></h1>
+          <div id="exampleSlider5" class="exampleSlider">
+              <div class="MS-content">
+                  <div class="item">
+                      <a href="assets/pages/products.php?id_uhren=10">
+                          <img src="images/rolex/rolex milgauss.png" alt="">
+                      </a>
+                      <h2 class="headline_wacthes_name">MILGAUSS</h2>
+                      <p class="item-info">Oyster, 40 mm, Edelstahl Oystersteel</p>
+                      <a href="assets/pages/products.php?id_uhren=10" class="myButton">Weitere Infos</a>
+                  </div>
+              </div>
+              <div class="MS-controls">
+                  <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                  <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
               </div>
           </div>
-          <div class="MS-controls">
-              <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-              <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-          </div>
-        </div>
       </section>
 
         <section id="ich">

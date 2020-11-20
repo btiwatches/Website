@@ -216,7 +216,7 @@ body {
 }
 
 .blackblock {
-  height: 100%;
+  height: 111%;
   position: absolute;
   top: 0;
   left: 0;
@@ -730,20 +730,21 @@ a1 {
 }
 
 .StockBti {
-  color: white; 
-  text-align: start; 
-  margin-left: 10px; 
-  margin-top: 350px;
-  font-size: 0.5rem;
+  font-family: "Aldrich";
+  font-weight: 100;
 }
 
-.StockBtiLink {
-  margin-top: -50px;
+.StockBti:hover {
+  color: #494949;
 }
 
-.StockBtiLink > a {
-  color: lightblue;
-  font-weight: 600;
+.StockBti > b{
+  font-family: "Aldrich";
+  font-weight: 100;
+}
+
+.StockBti:hover > b {
+  color: #494949;
 }
 
 .contact-section{
@@ -956,4 +957,59 @@ max-width: 1024px) {
     font-size: 10px !important;
   }
 
+  #background-video {
+    display: none !important;
+  }
+
 }
+
+.home-banner .slide .video-slide {
+
+  background-color: #000; }
+
+
+.home-banner.loading .video-background {
+
+  opacity: 0; }
+
+
+.video-background {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 0;
+
+  padding-top: 56.25%;
+
+  width: 100%;
+
+  -webkit-transform: translateY(-50%);
+
+  -ms-transform: translateY(-50%);
+
+  transform: translateY(-50%);
+
+  -webkit-transition: 2s opacity ease;
+
+  transition: 2s opacity ease;
+
+  opacity: 1; }
+
+
+.video-foreground,
+
+.video-background iframe {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  pointer-events: none; }

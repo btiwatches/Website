@@ -309,7 +309,8 @@ $uhrzeit = date("H:i",$timestamp);
                                 Melden sie sich bei: $email
                                 <p style=\"font-size: smaller\">Diese Mail wurde am $datum um $uhrzeit vom <b>BTI Watches Mail System</b> verschickt</p>";
 
-        $mail->addAddress("btiwatches.noreply@gmail.com");
+        $mail->addAddress("Dennis.vandenbrock@btiwatches.de");
+        $mail->addAddress("dennisvandenbrock54@gmail.com");
 
         if ($mail->Send()) {
             echo "<p style=\"color: green; text-align: center; \">Verifications Email wurde versendet</p>";

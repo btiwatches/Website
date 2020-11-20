@@ -19,16 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acba68d2-f1a5-4fb4-b2af-e3d60b2715fd" name="Default Changelist" comment="17.11.20 - Code CleanUp &amp; Responsive&lt;">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.htpasswd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DATABASE/BTI Watches Datenbank.sql" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DATABASE/BTI Watches Datenbank.sql" afterDir="false" />
+    <list default="true" id="acba68d2-f1a5-4fb4-b2af-e3d60b2715fd" name="Default Changelist" comment="20.11.20 - Code CleanUp &amp; Responsive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pages/css/Products/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pages/css/Products/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pages/favoriten.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pages/favoriten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pages/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pages/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sendmail/PHPMailer/sendmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sendmail/PHPMailer/sendmail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +60,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\denni\PhpstormProjects\Website" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -84,7 +86,9 @@
       <workItem from="1605724644328" duration="615000" />
       <workItem from="1605725286939" duration="14000" />
       <workItem from="1605727357243" duration="937000" />
-      <workItem from="1605771102562" duration="1445000" />
+      <workItem from="1605771102562" duration="1493000" />
+      <workItem from="1605781641904" duration="2331000" />
+      <workItem from="1605890947255" duration="9212000" />
     </task>
     <task id="LOCAL-00001" summary="13.11.20">
       <created>1605303173460</created>
@@ -128,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605521656494</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="20.11.20 - Code CleanUp &amp; Responsive">
+      <created>1605773779817</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605773779817</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +161,8 @@
     <MESSAGE value="13.11.20" />
     <MESSAGE value="14.11.20" />
     <MESSAGE value="17.11.20 - Code CleanUp &amp; Responsive" />
-    <option name="LAST_COMMIT_MESSAGE" value="17.11.20 - Code CleanUp &amp; Responsive" />
+    <MESSAGE value="20.11.20 - Code CleanUp &amp; Responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="20.11.20 - Code CleanUp &amp; Responsive" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="381" key="#SQL_Dialects" timestamp="1605374603137">
@@ -161,18 +173,18 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605373535235" />
-    <state x="718" y="341" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605533732409">
+    <state x="718" y="341" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605899305932">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="718" y="341" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605533732409" />
+    <state x="718" y="341" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605899305932" />
     <state x="794" y="463" key="NewPhpFileDialog" timestamp="1605533917683">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="794" y="463" key="NewPhpFileDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605533917683" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1605521660780">
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1605773781843">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605521660780" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605773781843" />
     <state x="2303" y="164" width="1261" height="730" key="dock-window-1" timestamp="1605533286949">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
